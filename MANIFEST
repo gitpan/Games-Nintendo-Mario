@@ -5,6 +5,8 @@ lib/Games/Nintendo/Mario/SMB3.pm
 lib/Games/Nintendo/Mario/Hearts.pm
 Makefile.PL
 MANIFEST			This list of files
+README
+Changes
 META.yml                                Module meta-data (added by MakeMaker)
 
 t/base.t
@@ -12,3 +14,5 @@ t/hearts.t
 t/smb.t
 t/smb2.t
 t/smb3.t
+t/pod.t
+t/pod-coverage.t

@@ -2,7 +2,7 @@
 
 package Games::Nintendo::Mario::Hearts;
 
-our $VERSION = '0.09_01';
+our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario);
 
@@ -96,6 +96,19 @@ defaults to 1 at creation.
 
 This method returns the number of heart containers currently in the plumber's
 heart meter.  It defaults to 3 at creation.
+
+=item C<< damage >>
+
+=item C<< powerup >>
+
+These methods are defined in Games::Nintendo::Mario.
+
+=item C<< games >>
+
+This is an abstract subclass for Mario classes, and does not represent any one
+game.
+
+=back
 
 =head1 AUTHORS
 

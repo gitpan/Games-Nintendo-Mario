@@ -2,7 +2,7 @@
 
 package Games::Nintendo::Mario;
 
-our $VERSION = '0.09_01';
+our $VERSION = '0.10';
 
 =head1 NAME
 

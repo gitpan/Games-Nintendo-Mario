@@ -2,7 +2,7 @@
 
 package Games::Nintendo::Mario::SMB2;
 
-our $VERSION = '0.09_01';
+our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario::Hearts);
 
@@ -117,13 +117,40 @@ during construction; set hearts instead.
 
 Valid powerups are: C<mushroom> or C<heart>
 
-=head1 AUTHORS
+=head1 METHODS
 
-Ricardo SIGNES E<lt>rjbs@cpan.orgE<gt>
+=over 4
+
+=item C<state>
+
+=item C<name>
+
+=item C<powerup>
+
+These methods are implemented as per Games::Nintendo::Mario
+
+=item C<power>
+
+=item C<speed>
+
+=item C<jump>
+
+These methods return the requested attribute for the current character.
+
+=item C<games>
+
+The rules reflected in this module were only present in Super Mario Bros. 2
+(and its re-releases).
+
+=back
+
+=head1 AUTHOR
+
+Ricardo SIGNES, <rjbs@cpan.org>
 
 =head1 COPYRIGHT
 
-Copyright 2003 by Ricardo Signes E<lt>rjbs@cpan.orgE<gt>
+Copyright 2003-2004 by Ricardo SIGNES <rjbs@cpan.org>
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

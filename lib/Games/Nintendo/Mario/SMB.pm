@@ -2,7 +2,7 @@
 
 package Games::Nintendo::Mario::SMB;
 
-our $VERSION = '0.09_01';
+our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario);
 
@@ -72,6 +72,16 @@ The plumber's state may be any of: C<normal>, C<super>, or C<fire>
 =head2 POWERUPS
 
 Valid powerups are: C<mushroom> and C<flower>
+
+=head1 METHODS
+
+=over 4
+
+=item C<games>
+
+This ruleset reflects Mario in Super Mario Bros., the original SMB game.
+
+=back
 
 =head1 AUTHORS
 

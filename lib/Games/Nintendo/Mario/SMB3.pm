@@ -2,7 +2,7 @@
 
 package Games::Nintendo::Mario::SMB3;
 
-our $VERSION = '0.09_01';
+our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario);
 
@@ -80,6 +80,17 @@ C<tanooki>, C<hammer>, C<frog>, or C<pwing>
 
 Valid powerups are: C<mushroom>, C<flower>, C<leaf>, C<tanookisuit>,
 C<hammersuit>, C<frogsuit>, or C<pwing>
+
+=head1 METHODS
+
+=over 4
+
+=item C<games>
+
+This ruleset reflects Mario in Super Mario Bros. 3.
+
+=back
+
 
 =head1 AUTHORS
 

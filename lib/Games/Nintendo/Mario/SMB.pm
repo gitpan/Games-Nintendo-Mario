@@ -4,6 +4,8 @@ package Games::Nintendo::Mario::SMB;
 
 use base qw(Games::Nintendo::Mario);
 
+our $VERSION = 0.01;
+
 sub _names  { qw[Mario Luigi] }
 sub _states { qw[normal super fire] }
 sub _items  { qw[mushroom flower] }

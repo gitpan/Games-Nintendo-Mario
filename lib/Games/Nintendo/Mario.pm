@@ -27,11 +27,12 @@ change his state.
 
 use strict;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 sub _names  { qw[Mario Luigi] }
 sub _states { qw[normal] }
 sub _items  { () }
+sub _other_defaults { () }
 
 sub _goto_hash   {
 	{ damage => 'dead' }
@@ -80,7 +81,8 @@ sub new {
 
 	my $plumber = {
 		state => $args{state},
-		name  => $args{name}
+		name  => $args{name},
+		$class->_other_defaults
 	};
 
 	bless $plumber => $class;

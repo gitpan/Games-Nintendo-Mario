@@ -2,9 +2,12 @@
 
 package Games::Nintendo::Mario::Hearts;
 
+our $VERSION = '0.09_01';
+
 use base qw(Games::Nintendo::Mario);
 
-our $VERSION = 0.01;
+use strict;
+use warnings;
 
 sub _states { qw[normal] }
 sub _items  { qw[heart] }

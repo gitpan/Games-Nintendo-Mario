@@ -1,11 +1,12 @@
 lib/Games/Nintendo/Mario.pm
-lib/Games/Nintendo/Mario/Hearts.pm
 lib/Games/Nintendo/Mario/SMB.pm
 lib/Games/Nintendo/Mario/SMB2.pm
 lib/Games/Nintendo/Mario/SMB3.pm
+lib/Games/Nintendo/Mario/Hearts.pm
 Makefile.PL
 MANIFEST			This list of files
-META.yml
+META.yml                                Module meta-data (added by MakeMaker)
+
 t/base.t
 t/hearts.t
 t/smb.t

@@ -2,9 +2,12 @@
 
 package Games::Nintendo::Mario::SMB2;
 
+our $VERSION = '0.09_01';
+
 use base qw(Games::Nintendo::Mario::Hearts);
 
-our $VERSION = 0.01;
+use strict;
+use warnings;
 
 sub _names  { qw[Mario Luigi Peach Toad] }
 sub _states { qw[normal] } # super isn't listed to prevent creation-as-super

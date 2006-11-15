@@ -1,12 +1,18 @@
-#!/usr/bin/perl
-
+use strict;
+use warnings;
 package Games::Nintendo::Mario;
 
-our $VERSION = '0.200';
+our $VERSION = '0.201';
 
 =head1 NAME
 
 Games::Nintendo::Mario -- a class for jumping Italian plumbers
+
+=head1 VERSION
+
+version 0.201
+
+  $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario.pm 28018 2006-11-14T22:48:02.309600Z rjbs  $
 
 =head1 SYNOPSIS
 
@@ -25,9 +31,6 @@ change his state.
 
 =cut
 
-use strict;
-use warnings;
-
 use Carp qw(cluck);
 
 sub _names  { qw[Mario Luigi] }
@@ -36,18 +39,18 @@ sub _items  { () }
 sub _other_defaults { () }
 
 sub _goto_hash   {
-	{ damage => 'dead' }
+  { damage => 'dead' }
 }
 
 sub _goto {
-	my $self = shift;
-	my ($state, $item) = @_;
-	my $goto = $self->_goto_hash;
+  my $self = shift;
+  my ($state, $item) = @_;
+  my $goto = $self->_goto_hash;
 
-	return unless exists $goto->{$item};
-	return $goto->{$item} unless (ref $goto->{$item} eq 'HASH');
-	return $goto->{$item}{_else} unless $goto->{$item}{$state};
-	return $goto->{$item}{$state};
+  return unless exists $goto->{$item};
+  return $goto->{$item} unless (ref $goto->{$item} eq 'HASH');
+  return $goto->{$item}{_else} unless $goto->{$item}{$state};
+  return $goto->{$item}{$state};
 }
 
 =head1 METHODS
@@ -68,25 +71,25 @@ respectively.
 =cut
 
 sub new {
-	my $class = shift;
-	my %args  = (name => 'Mario', state => 'normal', @_);
+  my $class = shift;
+  my %args  = (name => 'Mario', state => 'normal', @_);
 
-	unless (grep { $_ eq $args{name} } $class->_names) {
-		cluck "bad name for plumber";
-		return;
-	}
-	unless (grep { $_ eq $args{state} } $class->_states) {
-		cluck "bad starting state for plumber";
-		return;
-	}
+  unless (grep { $_ eq $args{name} } $class->_names) {
+    cluck "bad name for plumber";
+    return;
+  }
+  unless (grep { $_ eq $args{state} } $class->_states) {
+    cluck "bad starting state for plumber";
+    return;
+  }
 
-	my $plumber = {
-		state => $args{state},
-		name  => $args{name},
-		$class->_other_defaults
-	};
+  my $plumber = {
+    state => $args{state},
+    name  => $args{name},
+    $class->_other_defaults
+  };
 
-	bless $plumber => $class;
+  bless $plumber => $class;
 }
 
 =item C<< powerup >>
@@ -100,24 +103,24 @@ representing Mario in other games may allow various powerup names to be passed.
 =cut
 
 sub powerup {
-	my $plumber = shift;
-	my $item    = shift;
+  my $plumber = shift;
+  my $item    = shift;
 
-	if ($plumber->state eq 'dead') {
-		cluck "$plumber->{name} can't power up when dead";
-		return $plumber;
-	}
+  if ($plumber->state eq 'dead') {
+    cluck "$plumber->{name} can't power up when dead";
+    return $plumber;
+  }
 
-	unless (grep { $_ eq $item } $plumber->_items) {
-		cluck "$plumber->{name} can't power up with that!";
-		return $plumber;
-	}
+  unless (grep { $_ eq $item } $plumber->_items) {
+    cluck "$plumber->{name} can't power up with that!";
+    return $plumber;
+  }
 
-	my $goto = $plumber->_goto($plumber->state,$item);
+  my $goto = $plumber->_goto($plumber->state,$item);
 
-	$plumber->{state} = $goto if $goto;
+  $plumber->{state} = $goto if $goto;
 
-	return $plumber;
+  return $plumber;
 }
 
 =item C<< damage >>
@@ -131,27 +134,27 @@ his death.
 =cut
 
 sub damage {
-	my $plumber = shift;
+  my $plumber = shift;
 
-	my $goto = $plumber->_goto($plumber->state,'damage');
+  my $goto = $plumber->_goto($plumber->state,'damage');
 
-	$plumber->{state} = $goto if $goto;
+  $plumber->{state} = $goto if $goto;
 
-	return $plumber;
+  return $plumber;
 }
 
 =item C<< state >>
 
   print $hero->state;
-	
+  
 This method accesses the name of Mario's current state.
 
 =cut
 
-sub state {
-	my $plumber = shift;
+sub state { ## no critic Homonym
+  my $plumber = shift;
 
-	return $plumber->{state};
+  return $plumber->{state};
 }
 
 =item C<< name >>
@@ -164,13 +167,13 @@ class, this is always the same as the name passed to the constructor.)
 =cut
 
 sub name {
-	my $plumber = shift;
+  my $plumber = shift;
 
-	return $plumber->{name} if $plumber->state eq 'normal';
+  return $plumber->{name} if $plumber->state eq 'normal';
 
-	my $name = $plumber->state .' '. $plumber->{name};
-	$name =~ s/(^.)/\u$1/;
-	return $name;
+  my $name = $plumber->state . q{ } . $plumber->{name};
+  $name =~ s/(^.)/\u$1/;
+  return $name;
 }
 
 =item C<< games >>
@@ -183,7 +186,7 @@ provided by this class.
 =cut
 
 sub games {
-	return ('Mario Bros.');
+  return ('Mario Bros.');
 }
 
 "It's-a me!  Mario!";
@@ -196,7 +199,7 @@ Games::Nintendo::Mario::Hearts base class for representing Marios that have
 hearts, like Mario from SMB2 or Wario.  After that, of course, SMB2 and Wario
 classes.
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Ricardo SIGNES E<lt>rjbs@cpan.orgE<gt>
 

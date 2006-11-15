@@ -1,39 +1,36 @@
-#!/usr/bin/perl
-
+use strict;
+use warnings;
 package Games::Nintendo::Mario::SMB3;
 
 our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario);
 
-use strict;
-use warnings;
-
 sub _names  { qw[Mario Luigi] }
 sub _states { qw[normal super fire raccoon tanooki frog hammer pwing] }
 sub _items  { qw[mushroom flower leaf tanookisuit frogsuit hammersuit pwing] }
 
 sub _goto_hash { 
-	{
-		damage		=> {
-			normal	=> 'dead',
-			super	=> 'normal',
-			_else	=> 'super'
-		},
-		mushroom 	=> {
-			normal	=> 'super'
-		},
-		flower		=> 'fire',
-		leaf		=> 'raccoon',
-		tanookisuit	=> 'tanooki',
-		hammersuit	=> 'hammer',
-		frogsuit	=> 'frog',
-		pwing		=> 'pwing'
-	}
+  {
+    damage    => {
+      normal  => 'dead',
+      super  => 'normal',
+      _else  => 'super'
+    },
+    mushroom   => {
+      normal  => 'super'
+    },
+    flower    => 'fire',
+    leaf    => 'raccoon',
+    tanookisuit  => 'tanooki',
+    hammersuit  => 'hammer',
+    frogsuit  => 'frog',
+    pwing    => 'pwing'
+  }
 }
 
 sub games {
-	return ('Super Mario Bros. 3');
+  return ('Super Mario Bros. 3');
 }
 
 "It's-a me!  Mario!";
@@ -43,6 +40,10 @@ __END__
 =head1 NAME
 
 Games::Nintendo::Mario::SMB3 -- a class for fuzzy-tailed Italian plumbers
+
+=head1 VERSION
+
+  $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario/SMB3.pm 28017 2006-11-14T22:47:24.486754Z rjbs  $
 
 =head1 SYNOPSIS
 
@@ -92,7 +93,7 @@ This ruleset reflects Mario in Super Mario Bros. 3.
 =back
 
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Ricardo SIGNES E<lt>rjbs@cpan.orgE<gt>
 

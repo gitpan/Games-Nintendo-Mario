@@ -1,13 +1,10 @@
-#!/usr/bin/perl
-
+use strict;
+use warnings;
 package Games::Nintendo::Mario::SMB;
 
 our $VERSION = '0.200';
 
 use base qw(Games::Nintendo::Mario);
-
-use strict;
-use warnings;
 
 sub _names  { qw[Mario Luigi] }
 sub _states { qw[normal super fire] }
@@ -40,7 +37,11 @@ __END__
 
 =head1 NAME
 
-Games::Nintendo::Mario::SMB -- a class for mushroom-eating Italian plumbers
+Games::Nintendo::Mario::SMB - a class for mushroom-eating Italian plumbers
+
+=head1 VERSION
+
+  $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario/SMB.pm 28017 2006-11-14T22:47:24.486754Z rjbs  $
 
 =head1 SYNOPSIS
 
@@ -83,7 +84,7 @@ This ruleset reflects Mario in Super Mario Bros., the original SMB game.
 
 =back
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Ricardo SIGNES E<lt>rjbs@cpan.orgE<gt>
 

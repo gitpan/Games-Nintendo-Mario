@@ -1,13 +1,10 @@
-#!/usr/bin/perl
-
+use strict;
+use warnings;
 package Games::Nintendo::Mario::Hearts;
 
 our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario);
-
-use strict;
-use warnings;
 
 sub _states { qw[normal] }
 sub _items  { qw[heart] }
@@ -16,37 +13,37 @@ sub _other_defaults { ( max_hearts => 3, hearts => 1 ) }
 sub _goto_hash { {} } # not used by base Hearts class
 
 sub max_hearts {
-	return $_[0]->{max_hearts}
+  return $_[0]->{max_hearts}
 }
 
 sub hearts {
-	return $_[0]->{hearts}
+  return $_[0]->{hearts}
 }
 
 sub powerup {
-	my $plumber  = shift;
-	my $item     = shift;
+  my $plumber  = shift;
+  my $item     = shift;
 
-	if (($item eq 'heart') and ($plumber->hearts) and ($plumber->hearts < $plumber->max_hearts)) {
-		$plumber->{hearts}++;
-	}
-	$plumber->SUPER::powerup($item);
+  if (($item eq 'heart') and ($plumber->hearts) and ($plumber->hearts < $plumber->max_hearts)) {
+    $plumber->{hearts}++;
+  }
+  $plumber->SUPER::powerup($item);
 }
 
 sub damage {
-	my $self = shift;
-	my $item = shift;
+  my $self = shift;
+  my $item = shift;
 
-	if ($self->hearts) {
-		$self->{hearts}--;
-		$self->{state} = 'dead';
-	}
+  if ($self->hearts) {
+    $self->{hearts}--;
+    $self->{state} = 'dead';
+  }
 
-	$self->SUPER::damage;
+  $self->SUPER::damage;
 }
 
 sub games {
-	return ();
+  return ();
 }
 
 "It's-a me!  Mario!";
@@ -55,7 +52,11 @@ __END__
 
 =head1 NAME
 
-Games::Nintendo::Mario::Hearts -- a superclass for Italian plubmers who can take a beating
+Games::Nintendo::Mario::Hearts - a superclass for Italian plubmers who can take a beating
+
+=head1 VERSION
+
+ $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario/Hearts.pm 28017 2006-11-14T22:47:24.486754Z rjbs  $
 
 =head1 SYNOPSIS
 
@@ -110,7 +111,7 @@ game.
 
 =back
 
-=head1 AUTHORS
+=head1 AUTHOR
 
 Ricardo SIGNES E<lt>rjbs@cpan.orgE<gt>
 

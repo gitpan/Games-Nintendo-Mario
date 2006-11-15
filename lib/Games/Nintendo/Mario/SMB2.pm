@@ -1,13 +1,10 @@
-#!/usr/bin/perl
-
+use strict;
+use warnings;
 package Games::Nintendo::Mario::SMB2;
 
 our $VERSION = '0.10';
 
 use base qw(Games::Nintendo::Mario::Hearts);
-
-use strict;
-use warnings;
 
 sub _names  { qw[Mario Luigi Peach Toad] }
 sub _states { qw[normal] } # super isn't listed to prevent creation-as-super
@@ -16,45 +13,46 @@ sub _items  { qw[mushroom heart] }
 sub _goto_hash {  {} }
 
 sub _char_attr {
-	{ Mario => { 
-		power => 4,
-		speed => 4,
-		jump  => 4
-	},
-	Luigi => { 
-		power => 3,
-		speed => 3,
-		jump  => 5
-	},
-	Peach => { 
-		power => 2,
-		speed => 2,
-		jump  => 3
-	},
-	Toad => { 
-		power => 5,
-		speed => 5,
-		jump  => 2
-	} }
+  {
+  Mario => { 
+    power => 4,
+    speed => 4,
+    jump  => 4
+  },
+  Luigi => { 
+    power => 3,
+    speed => 3,
+    jump  => 5
+  },
+  Peach => { 
+    power => 2,
+    speed => 2,
+    jump  => 3
+  },
+  Toad => { 
+    power => 5,
+    speed => 5,
+    jump  => 2
+  } }
 }
 
-sub state {
-	my $hero = shift;
-	if ($hero->hearts < 1) { return "dead" }
-	if ($hero->hearts > 1) { return "super" }
-	else { return "normal" }
+sub state { ## no critic Homonym
+  my $hero = shift;
+  if ($hero->hearts < 1) { return "dead" }
+  if ($hero->hearts > 1) { return "super" }
+  else { return "normal" }
 }
 
 sub name { $_[0]->{name} }
 
 sub powerup {
-	my $hero = shift;
-	my $item = shift;
+  my $hero = shift;
+  my $item = shift;
 
-	if (($item eq 'mushroom') and ($hero->max_hearts < 5)) {
-		$hero->{max_hearts}++;
-	}
-	$hero->SUPER::powerup($item);
+  if (($item eq 'mushroom') and ($hero->max_hearts < 5)) {
+    $hero->{max_hearts}++;
+  }
+  $hero->SUPER::powerup($item);
 }
 
 sub power { $_[0]->_char_attr->{$_[0]->name}->{power} }
@@ -62,7 +60,7 @@ sub speed { $_[0]->_char_attr->{$_[0]->name}->{speed} }
 sub jump  { $_[0]->_char_attr->{$_[0]->name}->{jump} }
 
 sub games {
-	return ('Super Mario Bros. 2');
+  return ('Super Mario Bros. 2');
 }
 
 "It's-a me!  Mario!";
@@ -71,7 +69,11 @@ __END__
 
 =head1 NAME
 
-Games::Nintendo::Mario::SMB2 -- a class for vegetable-throwing Italian plumbers (and friends)
+Games::Nintendo::Mario::SMB2 - a class for vegetable-throwing Italian plumbers (and friends)
+
+=head1 VERSION
+
+  $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario/SMB2.pm 28017 2006-11-14T22:47:24.486754Z rjbs  $
 
 =head1 SYNOPSIS
 

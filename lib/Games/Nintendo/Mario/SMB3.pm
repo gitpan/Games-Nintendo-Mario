@@ -43,7 +43,7 @@ Games::Nintendo::Mario::SMB3 -- a class for fuzzy-tailed Italian plumbers
 
 =head1 VERSION
 
-  $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario/SMB3.pm 28017 2006-11-14T22:47:24.486754Z rjbs  $
+  $Id: /my/cs/projects/Games-Nintendo-Mario/trunk/lib/Games/Nintendo/Mario/SMB3.pm 31690 2007-05-21T02:56:53.270944Z rjbs  $
 
 =head1 SYNOPSIS
 

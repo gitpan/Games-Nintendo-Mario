@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Games::Nintendo::Mario;
 
-our $VERSION = '0.201';
+our $VERSION = '0.202';
 
 =head1 NAME
 
@@ -12,7 +12,7 @@ Games::Nintendo::Mario -- a class for jumping Italian plumbers
 
 version 0.201
 
-  $Id: /my/cs/projects/mario/trunk/lib/Games/Nintendo/Mario.pm 28018 2006-11-14T22:48:02.309600Z rjbs  $
+  $Id: /my/cs/projects/Games-Nintendo-Mario/trunk/lib/Games/Nintendo/Mario.pm 31690 2007-05-21T02:56:53.270944Z rjbs  $
 
 =head1 SYNOPSIS
 

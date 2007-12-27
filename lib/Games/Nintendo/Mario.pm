@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Games::Nintendo::Mario;
 
-our $VERSION = '0.202';
+our $VERSION = '0.203';
 
 =head1 NAME
 
@@ -10,9 +10,7 @@ Games::Nintendo::Mario -- a class for jumping Italian plumbers
 
 =head1 VERSION
 
-version 0.201
-
-  $Id: /my/cs/projects/Games-Nintendo-Mario/trunk/lib/Games/Nintendo/Mario.pm 31690 2007-05-21T02:56:53.270944Z rjbs  $
+version 0.203
 
 =head1 SYNOPSIS
 
@@ -195,9 +193,7 @@ sub games {
 
 =head1 TODO
 
-Games::Nintendo::Mario::Hearts base class for representing Marios that have
-hearts, like Mario from SMB2 or Wario.  After that, of course, SMB2 and Wario
-classes.
+Wario, SMW.
 
 =head1 AUTHOR
 

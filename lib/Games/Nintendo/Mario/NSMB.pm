@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Games::Nintendo::Mario::NSMB;
 
-our $VERSION = '0.202';
+our $VERSION = '0.203';
 
 use base qw(Games::Nintendo::Mario);
 
@@ -86,7 +86,7 @@ Games::Nintendo::Mario::NSMB -- a class for stylus-enabled Italian plumbers
 
 =head1 VERSION
 
-  $Id: /my/cs/projects/Games-Nintendo-Mario/trunk/lib/Games/Nintendo/Mario/NSMB.pm 31690 2007-05-21T02:56:53.270944Z rjbs  $
+version 0.203
 
 =head1 SYNOPSIS
 

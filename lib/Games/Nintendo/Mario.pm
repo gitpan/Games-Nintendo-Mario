@@ -1,16 +1,14 @@
-use strict;
+use 5.16.0;
 use warnings;
-package Games::Nintendo::Mario;
-
-our $VERSION = '0.204';
+package Games::Nintendo::Mario 0.205;
 
 =head1 NAME
 
-Games::Nintendo::Mario -- a class for jumping Italian plumbers
+Games::Nintendo::Mario - a class for jumping Italian plumbers
 
 =head1 VERSION
 
-version 0.204
+version 0.205
 
 =head1 SYNOPSIS
 
@@ -46,16 +44,14 @@ sub _goto {
   my $goto = $self->_goto_hash;
 
   return unless exists $goto->{$item};
-  return $goto->{$item} unless (ref $goto->{$item} eq 'HASH');
+  return $goto->{$item} unless ref $goto->{$item} eq 'HASH';
   return $goto->{$item}{_else} unless $goto->{$item}{$state};
   return $goto->{$item}{$state};
 }
 
 =head1 METHODS
 
-=over
-
-=item C<< new >>
+=head2 C<new>
 
   my $hero = Games::Nintendo::Mario->new(name => 'Luigi');
 
@@ -90,7 +86,7 @@ sub new {
   bless $plumber => $class;
 }
 
-=item C<< powerup >>
+=head2 C<powerup>
 
   $hero->powerup('hammer'); # this won't work
 
@@ -121,7 +117,7 @@ sub powerup {
   return $plumber;
 }
 
-=item C<< damage >>
+=head2 C<damage>
 
   $hero->damage;
 
@@ -141,7 +137,7 @@ sub damage {
   return $plumber;
 }
 
-=item C<< state >>
+=head2 C<state>
 
   print $hero->state;
   
@@ -155,7 +151,7 @@ sub state { ## no critic Homonym
   return $plumber->{state};
 }
 
-=item C<< name >>
+=head2 C<name>
 
   print $hero->name;
 
@@ -174,7 +170,7 @@ sub name {
   return $name;
 }
 
-=item C<< games >>
+=head2 C<games>
 
   if (grep /World/, $hero->games) { ... }
 
@@ -188,8 +184,6 @@ sub games {
 }
 
 "It's-a me!  Mario!";
-
-=back
 
 =head1 TODO
 

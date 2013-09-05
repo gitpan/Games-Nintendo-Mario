@@ -1,6 +1,6 @@
 use 5.16.0;
 use warnings;
-package Games::Nintendo::Mario::SMBTLL 0.205;
+package Games::Nintendo::Mario::SMBTLL 0.207;
 
 use parent qw(Games::Nintendo::Mario::SMB);
 
@@ -34,15 +34,16 @@ Games::Nintendo::Mario::SMBTLL - a class for long-lost Italian plumbers
 
 =head1 VERSION
 
-version 0.205
+version 0.207
 
 =head1 SYNOPSIS
 
   use Games::Nintendo::Mario::SMBLL;
 
-  my $hero = new Games::Nintendo::Mario::SMB
-                   name  => 'Luigi',
-                   state => 'normal';
+  my $hero = Games::Nintendo::Mario::SMB->new(
+    name  => 'Luigi',
+    state => 'normal',
+  );
 
   $hero->powerup('mushroom'); # doop doop doop!
   $hero->powerup('flower');   # change clothes

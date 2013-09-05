@@ -1,6 +1,6 @@
 use 5.16.0;
 use warnings;
-package Games::Nintendo::Mario::Hearts 0.205;
+package Games::Nintendo::Mario::Hearts 0.207;
 
 use parent qw(Games::Nintendo::Mario);
 use Hash::Util::FieldHash qw(fieldhash);
@@ -58,13 +58,13 @@ Games::Nintendo::Mario::Hearts - a superclass for Italian plubmers who can take 
 
 =head1 VERSION
 
-version 0.205
+version 0.207
 
 =head1 SYNOPSIS
 
   use Games::Nintendo::Mario::Hearts;
 
-  my $noone = new Games::Nintendo::Mario::Hearts;
+  my $noone = Games::Nintendo::Mario::Hearts->new;
   
   print $hero->hearts . '/' . $hero->max_hearts; # at 1/3 health
   $hero->powerup('heart');                       # up to 2/3!

@@ -1,6 +1,7 @@
 use 5.16.0;
 use warnings;
-package Games::Nintendo::Mario 0.205;
+package Games::Nintendo::Mario 0.207;
+our $VERSON = 0.207; # <-- for PAUSE indexer
 
 =head1 NAME
 
@@ -8,7 +9,7 @@ Games::Nintendo::Mario - a class for jumping Italian plumbers
 
 =head1 VERSION
 
-version 0.205
+version 0.207
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 use 5.16.0;
 use warnings;
-package Games::Nintendo::Mario::SMB3 0.205;
+package Games::Nintendo::Mario::SMB3 0.207;
 
 use parent qw(Games::Nintendo::Mario);
 
@@ -41,15 +41,16 @@ Games::Nintendo::Mario::SMB3 - a class for fuzzy-tailed Italian plumbers
 
 =head1 VERSION
 
-version 0.205
+version 0.207
 
 =head1 SYNOPSIS
 
   use Games::Nintendo::Mario::SMB3;
 
-  my $hero = new Games::Nintendo::Mario::SMB
-                   name  => 'Mario',
-                   state => 'hammer';
+  my $hero = Games::Nintendo::Mario::SMB->new(
+    name  => 'Mario',
+    state => 'hammer',
+  );
   
   $hero->powerup('mushroom'); # Nothing happens.
   $hero->damage;              # back to super
